@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TrabalhoMobile</string>
+    <string name="sing_in">Sing in</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="log_out">Log out</string>
+    <string name="label_map">Mapa de problemas</string>
+    <string name="button_cadastrar">Cadastrar Problema</string>
+    <string name="title_activity_cadastro">CadastroActivity</string>
+    <string name="label_cadastro">Cadastro</string>
+    <string name="tipo_eletrico">Elétrico</string>
+    <string name="tipo_encanamento">Encanamento</string>
+    <string name="submit_cadastro">Cadastrar</string>
+    <string name="button_cancelar">Cancelar</string>
+    <string name="button_listar">Listar problemas</string>
+    <string name="title_activity_listagem">ListagemActivity</string>
+    <string name="label_nome">Nome:</string>
+    <string name="label_tipo">Tipo:</string>
+    <string name="title_activity_detalhes">DetalhesActivity</string>
+    <string name="title_activity_registro_conta">RegistroContaActivity</string>
+    <string name="label_descricao">Descrição:</string>
+    <string name="prof_encanador">Encanador</string>
+    <string name="prof_eletricista">Eletricista</string>
+</resources>
