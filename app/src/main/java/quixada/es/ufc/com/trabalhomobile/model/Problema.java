@@ -7,10 +7,12 @@ import java.io.Serializable;
  */
 
 public class Problema implements Serializable {
+
     private String nome;
     private String descricao;
     private String tipo;
     private long id;
+    private String status;
 
     public String getNome() {
         return nome;
@@ -42,5 +44,13 @@ public class Problema implements Serializable {
 
     public long getId() {
         return id;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
