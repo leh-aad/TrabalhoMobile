@@ -18,6 +18,7 @@ import quixada.es.ufc.com.trabalhomobile.dao.ProblemaDAO;
 import quixada.es.ufc.com.trabalhomobile.R;
 import quixada.es.ufc.com.trabalhomobile.adapter.ListaProblemasAdpter;
 import quixada.es.ufc.com.trabalhomobile.model.Problema;
+import quixada.es.ufc.com.trabalhomobile.network.AndroidJSON;
 
 public class ListagemActivity extends AppCompatActivity {
 
@@ -32,8 +33,10 @@ public class ListagemActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        ProblemaDAO dao = new ProblemaDAO();
-        problemas = dao.getLista();
+//        ProblemaDAO dao = new ProblemaDAO(this);
+//        problemas = dao.buscar();
+        AndroidJSON androidJSON = new AndroidJSON();
+        problemas= androidJSON.getProblemas();
 
         final ListView lista = (ListView) findViewById(R.id.lista_pro);
         adpter = new ListaProblemasAdpter(getApplicationContext(),problemas);

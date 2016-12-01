@@ -1,8 +1,13 @@
 package quixada.es.ufc.com.trabalhomobile.dao;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import quixada.es.ufc.com.trabalhomobile.BD.BDCore;
 import quixada.es.ufc.com.trabalhomobile.model.Usuario;
 
 /**
@@ -11,13 +16,20 @@ import quixada.es.ufc.com.trabalhomobile.model.Usuario;
 
 public class UsuarioDAO {
 
-    private static List<Usuario> usuarios= new ArrayList<Usuario>();
+    private SQLiteDatabase database;
 
-    public void adicionar(Usuario usuario){
-        usuarios.add(usuario);
+    public UsuarioDAO(Context context){
+        BDCore bd = new BDCore(context);
+        database = bd.getWritableDatabase();
     }
 
-    public List<Usuario> getLista() {
-        return usuarios;
+    public void inserir(Usuario usuario){
+        ContentValues values = new ContentValues();
+        values.put("nome",usuario.getNome());
+        values.put("email",usuario.getEmail());
+        values.put("senha",usuario.getSenha());
+        values.put("tipo",usuario.getTipo());
+
+        database.insert("usuario",null,values);
     }
 }

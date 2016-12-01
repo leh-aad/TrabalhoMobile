@@ -11,7 +11,7 @@ public class Problema implements Serializable {
     private String nome;
     private String descricao;
     private String tipo;
-    private long id;
+    private int id;
     private String status;
 
     public String getNome() {
@@ -30,7 +30,7 @@ public class Problema implements Serializable {
         this.descricao = descricao;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -42,7 +42,7 @@ public class Problema implements Serializable {
         this.tipo = tipo;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 

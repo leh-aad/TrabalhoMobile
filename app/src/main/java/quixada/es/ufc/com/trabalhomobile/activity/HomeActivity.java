@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import quixada.es.ufc.com.trabalhomobile.R;
+import quixada.es.ufc.com.trabalhomobile.network.BuscarProblemasRunnable;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -41,6 +42,9 @@ public class HomeActivity extends AppCompatActivity {
         if(id == R.id.action_listar){
             Intent intent = new Intent(this, ListagemActivity.class);
             startActivity(intent);
+            BuscarProblemasRunnable problemasRunnable = new BuscarProblemasRunnable();
+            Thread thread = new Thread(problemasRunnable);
+            thread.start();
         }
         return super.onOptionsItemSelected(item);
     }

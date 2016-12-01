@@ -20,6 +20,9 @@ import quixada.es.ufc.com.trabalhomobile.R;
 import quixada.es.ufc.com.trabalhomobile.model.Problema;
 
 public class CadastroActivity extends AppCompatActivity {
+    TextView vNome = (TextView) findViewById(R.id.nome_problema);
+    TextView vDescricao = (TextView) findViewById(R.id.descricao_problema);
+    Problema p = new Problema();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,22 +58,19 @@ public class CadastroActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void onClickCadastrar(View view) {
-
-        TextView vNome = (TextView) findViewById(R.id.nome_problema);
-        TextView vDescricao = (TextView) findViewById(R.id.descricao_problema);
-
-        Problema p = new Problema();
-        ProblemaDAO dao = new ProblemaDAO();
+        ProblemaDAO dao = new ProblemaDAO(this);
         p.setNome(vNome.getText().toString());
         p.setDescricao(vDescricao.getText().toString());
+
         if (((RadioButton) findViewById(R.id.tipo_eletrico)).isChecked()){
             p.setTipo("Eletrico");
         }
         if (((RadioButton) findViewById(R.id.tipo_encanamento)).isChecked()){
             p.setTipo("Encanamento");
         }
-        dao.cadastrar(p);
-       //------------------------------------------//
+
+        dao.inserir(p);
+
         Context context = getApplicationContext();
         String text = "Cadastrado com sucesso!";
         int duration = Toast.LENGTH_SHORT;

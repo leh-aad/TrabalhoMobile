@@ -30,7 +30,7 @@ public class RegistroContaActivity extends AppCompatActivity {
         EditText vSenha = (EditText) findViewById(R.id.senha_registro);
 
         Usuario u = new Usuario();
-        UsuarioDAO dao  = new UsuarioDAO();
+        UsuarioDAO dao  = new UsuarioDAO(this);
 
         u.setEmail(vEmail.getText().toString());
         u.setSenha(vSenha.getText().toString());
@@ -42,7 +42,7 @@ public class RegistroContaActivity extends AppCompatActivity {
             u.setTipo("Encanador");
         }
 
-        dao.adicionar(u);
+        dao.inserir(u);
 
         Context context = getApplicationContext();
         String text = "Cadastrado com sucesso!";

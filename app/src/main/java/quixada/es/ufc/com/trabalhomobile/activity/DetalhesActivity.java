@@ -58,8 +58,8 @@ public class DetalhesActivity extends AppCompatActivity {
     }
 
     public void OnClickremove(View view){
-        ProblemaDAO dao = new ProblemaDAO();
-        dao.remove(p);
+        ProblemaDAO dao = new ProblemaDAO(this);
+        dao.deletar(p);
         Intent intent = new Intent(this,LoginActivity.class);
         startActivity(intent);
     }
