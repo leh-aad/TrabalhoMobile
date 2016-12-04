@@ -20,9 +20,9 @@ import quixada.es.ufc.com.trabalhomobile.R;
 import quixada.es.ufc.com.trabalhomobile.model.Problema;
 
 public class CadastroActivity extends AppCompatActivity {
-    TextView vNome = (TextView) findViewById(R.id.nome_problema);
-    TextView vDescricao = (TextView) findViewById(R.id.descricao_problema);
-    Problema p = new Problema();
+    TextView vNome;
+    TextView vDescricao;
+    Problema p;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +58,9 @@ public class CadastroActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void onClickCadastrar(View view) {
+        vNome = (TextView) findViewById(R.id.nome_problema);
+        vDescricao = (TextView) findViewById(R.id.descricao_problema);
+        p = new Problema();
         ProblemaDAO dao = new ProblemaDAO(this);
         p.setNome(vNome.getText().toString());
         p.setDescricao(vDescricao.getText().toString());

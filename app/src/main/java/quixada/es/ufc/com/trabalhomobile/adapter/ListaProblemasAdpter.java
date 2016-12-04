@@ -27,7 +27,6 @@ public class ListaProblemasAdpter extends BaseAdapter{
     public int getCount() {
         return problemas.size();
     }
-
     @Override
     public Object getItem(int position) {
         return problemas.get(position);
