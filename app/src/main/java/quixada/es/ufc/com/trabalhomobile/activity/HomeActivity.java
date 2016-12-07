@@ -112,9 +112,8 @@ public class HomeActivity extends AppCompatActivity {
                 urlConnection = (HttpURLConnection) url.openConnection();
 
                 urlConnection.setDoOutput(true);
-
-                in = new BufferedReader(new InputStreamReader(
-                        urlConnection.getInputStream()));
+                urlConnection.setRequestMethod("GET");
+                in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
 
                 String response = "";
 

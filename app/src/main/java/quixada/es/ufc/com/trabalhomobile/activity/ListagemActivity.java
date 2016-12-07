@@ -32,10 +32,6 @@ public class ListagemActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-//        ProblemaDAO dao = new ProblemaDAO(this);
-//        problemas = dao.buscar();
-//        AndroidJSON androidJSON = new AndroidJSON();
-//        problemas= androidJSON.getProblemas();
         problemas = HomeActivity.problemas;
         final ListView lista = (ListView) findViewById(R.id.lista_pro);
         adpter = new ListaProblemasAdpter(getApplicationContext(),problemas);
