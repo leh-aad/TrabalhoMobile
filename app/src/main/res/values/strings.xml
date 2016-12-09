@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TrabalhoMobile</string>
     <string name="sing_in">Sing in</string>
-    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_home">Home</string>
     <string name="log_out">Log out</string>
     <string name="label_map">Mapa de problemas</string>
     <string name="button_cadastrar">Cadastrar Problema</string>
