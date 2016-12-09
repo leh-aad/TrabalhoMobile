@@ -13,6 +13,8 @@ public class Problema implements Serializable {
     private String tipo;
     private int id;
     private String status;
+    private String latitude;
+    private String longitude;
 
     public String getNome() {
         return nome;

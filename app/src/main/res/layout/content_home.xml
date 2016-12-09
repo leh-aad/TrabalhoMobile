@@ -13,37 +13,8 @@
     tools:context="quixada.es.ufc.com.trabalhomobile.activity.HomeActivity"
     tools:showIn="@layout/activity_home">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/map"
-                android:id="@+id/imageView"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <TextView
-        android:text="@string/label_map"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/linearLayout"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/label_map"
-        android:textStyle="normal|bold"
-        android:textSize="18sp" />
-
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </RelativeLayout>

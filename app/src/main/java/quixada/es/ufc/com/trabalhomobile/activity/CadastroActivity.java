@@ -32,11 +32,6 @@ public class CadastroActivity extends AppCompatActivity {
     TextView vNome;
     TextView vDescricao;
     Problema p;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +40,6 @@ public class CadastroActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     @Override
@@ -91,7 +83,7 @@ public class CadastroActivity extends AppCompatActivity {
         if (((RadioButton) findViewById(R.id.tipo_encanamento)).isChecked()) {
             p.setTipo("Encanamento");
         }
-        
+
         EnviarProblemaRunnable enviador = new EnviarProblemaRunnable();
         enviador.parseToJson(p);
         Thread thread = new Thread(enviador);

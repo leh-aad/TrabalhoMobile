@@ -1,5 +1,6 @@
 package quixada.es.ufc.com.trabalhomobile.activity;
 
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -12,12 +13,15 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import quixada.es.ufc.com.trabalhomobile.dao.ProblemaDAO;
 import quixada.es.ufc.com.trabalhomobile.R;
 import quixada.es.ufc.com.trabalhomobile.adapter.ListaProblemasAdpter;
 import quixada.es.ufc.com.trabalhomobile.model.Problema;
+import quixada.es.ufc.com.trabalhomobile.util.ConnectionDialog;
 
 public class ListagemActivity extends AppCompatActivity {
 
@@ -31,8 +35,8 @@ public class ListagemActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         problemas = HomeActivity.problemas;
+
         final ListView lista = (ListView) findViewById(R.id.lista_pro);
         adpter = new ListaProblemasAdpter(getApplicationContext(),problemas);
         lista.setAdapter(adpter);
@@ -46,7 +50,9 @@ public class ListagemActivity extends AppCompatActivity {
             }
         });
 
-
+//            DialogFragment newFragment = new ConnectionDialog();
+//            newFragment.show(getFragmentManager(), "");
+//
 
     }
 
